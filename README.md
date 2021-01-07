@@ -4,16 +4,16 @@
 
 Download the weights from these drive links and keep it in the *backup* folder.
 
--[board](https://drive.google.com/file/d/1W63HaBdtmTq_cT1u0SDh5tvrRmQTD4zI/view?usp=sharing)
--[module](https://drive.google.com/file/d/1-aGdPU61z8n1VrkYkSnyJPlVrKuZUq4A/view?usp=sharing)
+- [board](https://drive.google.com/file/d/1W63HaBdtmTq_cT1u0SDh5tvrRmQTD4zI/view?usp=sharing)
+- [module](https://drive.google.com/file/d/1-aGdPU61z8n1VrkYkSnyJPlVrKuZUq4A/view?usp=sharing)
 
 ## Usage 
 
 A class *Darknet* is defined and both the pytorch models are instances of this class.
 
-`model=Darknet('cfg/cfg_file.cfg',inference=True)
-module.load_weights('backup/weights_file.weights')
-model.cuda()`
+`model=Darknet('cfg/cfg_file.cfg',inference=True)`
+`module.load_weights('backup/weights_file.weights')`
+`model.cuda()`
 
 Two functions *my_detect* and *end_to_end* are defined in *iarc.py*.
 
