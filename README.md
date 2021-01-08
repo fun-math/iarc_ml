@@ -28,3 +28,11 @@ Returns a list of boolean flag (true if bbox predicted) and four integers (x1,y1
 
 Expects the cv_img in BGR format with entries in [0,255] and both pytorch models.
 Directly returns coorinates of bounding box of module from raw image. Format is similar as above.
+
+## Pictures
+
+![board model](data/board.jpg)
+
+![module model](data/module.jpg)
+
+![both models using *end_to_end*](data/end_to_end.jpg)
