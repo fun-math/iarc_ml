@@ -19,12 +19,12 @@ A class *Darknet* is defined and both the pytorch models are instances of this c
 
 Two functions *my_detect* and *end_to_end* are defined in *iarc.py*.
 
-`[x1,y1,x2,y2]=my_detect(model,cv_img)`
+`ret,x1,y1,x2,y2=my_detect(model,cv_img)`
 
 Expects the cv_img in BGR format with entries in [0,255] and the pytorch model.
-Returns a list of four integers (x1,y1) is the coordinate of top left corner and (x2,y2) is the coordinate of the bottom right corner. Returns 0 if no box is detected. (Note : x axis is the width of image)
+Returns a list of boolean flag (true if bbox predicted) and four integers (x1,y1) is the coordinate of top left corner and (x2,y2) is the coordinate of the bottom right corner. Returns 0 if no box is detected. (Note : x axis is the width of image)
 
-`[x1,y1,x2,y2]=end_to_end(board,module,cv_img)`
+`ret,x1,y1,x2,y2=end_to_end(board,module,cv_img)`
 
 Expects the cv_img in BGR format with entries in [0,255] and both pytorch models.
 Directly returns coorinates of bounding box of module from raw image. Format is similar as above.
