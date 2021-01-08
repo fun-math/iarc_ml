@@ -45,7 +45,7 @@ def end_to_end(board,module,cv_img):
   wc=x2-x1
 
   cropped=cv2.resize(cv_img[y1:y2,x1:x2], (module.width,module.height))
-  imShow(cropped)
+  # imShow(cropped)
   cropped=cv2.cvtColor(cropped, cv2.COLOR_BGR2RGB)
   boxes=do_detect(module, cropped, 0.4, 0.6, use_cuda)
   if len(boxes[0])==0:
@@ -59,3 +59,9 @@ def end_to_end(board,module,cv_img):
   print(a1,b1,a2,b2)
   return [True,a1,b1,a2,b2]
 
+if __name__=='__main__':
+  img=cv2.imread('data/board.jpg')
+  ret,x1,y1,x2,y2=my_detect(board,img)
+  img=cv2.rectangle(img,(x1,y1),(x2,y2),(0,0,255),2)
+  cv2.imshow('frame',img)
+  cv2.waitKey(0)
