@@ -31,8 +31,11 @@ Directly returns coorinates of bounding box of module from raw image. Format is 
 
 ## Pictures
 
+`ret,x1,y1,x2,y2=my_detect(board,cv_img)`
 ![board model](pytorch-yolov4/data/board.jpg)
 
+`ret,x1,y1,x2,y2=my_detect(module,cv_img)`
 ![module model](pytorch-yolov4/data/module.jpg)
 
+`ret,x1,y1,x2,y2=end_to_end(board,module,cv_img)`
 ![both models using *end_to_end*](pytorch-yolov4/data/end_to_end.jpg)
