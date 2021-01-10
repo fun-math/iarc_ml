@@ -44,6 +44,13 @@ def end_to_end(board,module,cv_img):
   hc=y2-y1
   wc=x2-x1
 
+  x1=max(0,x1)
+  x2=min(board.width,x2)
+  y1=max(0,y1)
+  y2=min(board.height,y2)
+  if (x2-x1)*(y2-y1)==0 :
+    return [False,0,0,0,0]
+
   cropped=cv2.resize(cv_img[y1:y2,x1:x2], (module.width,module.height))
   # imShow(cropped)
   cropped=cv2.cvtColor(cropped, cv2.COLOR_BGR2RGB)
@@ -51,12 +58,12 @@ def end_to_end(board,module,cv_img):
   if len(boxes[0])==0:
     return [False,0,0,0,0]
   box=boxes[0][0]
-  print(box,hc,wc,x1,y1)
+  # print(box,hc,wc,x1,y1)
   a1=x1+int(box[0]*wc)
   b1=y1+int(box[1]*hc)
   a2=x1+int(box[2]*wc)
   b2=y1+int(box[3]*hc)
-  print(a1,b1,a2,b2)
+  # print(a1,b1,a2,b2)
   return [True,a1,b1,a2,b2]
 
 if __name__=='__main__':
