@@ -14,7 +14,7 @@ from tool.yolo_layer import YoloLayer
 
 class Mish(torch.nn.Module):
     def __init__(self):
-        super().__init__()
+        super(Mish, self).__init__()
 
     def forward(self, x):
         x = x * (torch.tanh(torch.nn.functional.softplus(x)))
