@@ -1,5 +1,9 @@
 # iarc_ml
 
+## Updates
+
+Added *detect.py*. This is an example of a ROS node subscribing to the camera topic and running the model on it.
+
 ## Weights
 
 Download the weights from these drive links and keep it in the *backup* folder.
