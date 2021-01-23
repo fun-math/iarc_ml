@@ -48,3 +48,8 @@ Directly returns coorinates of bounding box of module from raw image. Format is 
 - `ret,x1,y1,x2,y2=end_to_end(board,module,cv_img)`
 
 ![both models using *end_to_end*](pytorch-yolov4/data/end_to_end.jpg)
+
+## References 
+
+- [darknet](https://github.com/AlexeyAB/darknet)
+- [pytorch](https://github.com/Tianxiaomo/pytorch-YOLOv4)
