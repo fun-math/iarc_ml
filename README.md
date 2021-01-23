@@ -2,7 +2,8 @@
 
 ## Updates
 
-Added *detect.py*. This is an example of a ROS node subscribing to the camera topic and running the model on it.
+- Added *detect.py*. This is an example of a ROS node subscribing to the camera topic and running the model on it.
+- Trained module on new mast (testing not done yet)
 
 ## Weights
 
@@ -10,6 +11,7 @@ Download the weights from these drive links and keep it in the *backup* folder.
 
 - [board](https://drive.google.com/file/d/1W63HaBdtmTq_cT1u0SDh5tvrRmQTD4zI/view?usp=sharing)
 - [module](https://drive.google.com/file/d/1-aGdPU61z8n1VrkYkSnyJPlVrKuZUq4A/view?usp=sharing)
+- [module_new](https://drive.google.com/file/d/1Mbv-Mt756YZ_OKRp_Sf20Q3lilPeooei/view?usp=sharing)
 
 ## Usage 
 
