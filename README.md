@@ -51,5 +51,5 @@ Directly returns coorinates of bounding box of module from raw image. Format is 
 
 ## References 
 
-- [darknet](https://github.com/AlexeyAB/darknet)
-- [pytorch](https://github.com/Tianxiaomo/pytorch-YOLOv4)
+- [darknet-https://github.com/AlexeyAB/darknet](https://github.com/AlexeyAB/darknet)
+- [pytorch-https://github.com/Tianxiaomo/pytorch-YOLOv4](https://github.com/Tianxiaomo/pytorch-YOLOv4)
