@@ -3,7 +3,8 @@
 ## Updates
 
 - Added *detect.py*. This is an example of a ROS node subscribing to the camera topic and running the model on it.
-- Trained module on new mast (testing not done yet)
+- Trained module on new mast\
+Update the cfg file to *yolov4_module_new.cfg* and the weights file too to run the new model.
 
 ## Weights
 
