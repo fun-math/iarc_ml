@@ -7,7 +7,7 @@
 Update the cfg file to *yolov4_module_new.cfg* and the weights file too to run the new model.
 - Trained module with yolov4 tiny which runs at 64fps on colab (as opposed to 20fps for yolov4).\
 Update the cfg file to *yolov4-tiny_module.cfg* and the weights file too to run the tiny model.\
-Note : There is a bug in *darknet2pytorch.py*. So clone again to run tiny model. 
+Note : There was a bug in *darknet2pytorch.py*. So clone again to run tiny model. 
 
 ## Weights
 
