@@ -244,7 +244,7 @@ class Darknet(nn.Module):
         if self.training:
             return out_boxes
         else:
-            x1,x2,x3=out_boxes
+            # x1,x2,x3=out_boxes
             #y1=self.yolo1(x1)
             #y2=self.yolo2(x2)
             #y3=self.yolo3(x3)
