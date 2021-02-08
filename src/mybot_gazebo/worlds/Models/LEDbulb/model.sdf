@@ -1,0 +1,82 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name='LEDbulb'>
+    <link name='link'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.1</iyy>
+          <iyz>0</iyz>
+          <izz>0.1</izz>
+        </inertia>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+      </inertial>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>1</gravity>
+      <visual name='visual'>
+        <geometry>
+          <sphere>
+            <radius>0.02</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>0 0 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+          <specular>1 1 1 1</specular>
+          <emissive>0 0.2 1 1</emissive>
+        </material>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <light name='nav_light' type='point'>
+        <pose>-0.025 0 0.05 0 0 0</pose>
+        <attenuation>
+          <range>1</range>
+          <linear>0.1</linear>
+        </attenuation>
+        <diffuse>0 0 1 1</diffuse>
+        <specular>1 1 1 1</specular>
+      </light>
+      <collision name='collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.05</radius>
+          </sphere>
+        </geometry>  
+      </collision>
+    </link>
+    <static>1</static>
+    <allow_auto_disable>1</allow_auto_disable>
+    <plugin name='light_control' filename='libLedPlugin.so'>
+      <enable>true</enable>
+      <light>
+        <id>link/nav_light</id>
+        <block>
+          <duration>0.5</duration>
+          <interval>0</interval>
+          <color>1 1 0</color>
+        </block>
+        <block>
+          <duration>0.5</duration>
+          <interval>0</interval>
+          <color>0 1 1</color>
+        </block>
+        <block>
+          <duration>0.5</duration>
+          <interval>0</interval>
+          <color>1 0 1</color>
+        </block>
+        <enable>true</enable>
+      </light>
+    </plugin>
+  </model>
+</sdf>

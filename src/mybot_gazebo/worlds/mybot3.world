@@ -1,0 +1,82 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <!-- We use a custom world for the rrbot so that the camera angle is launched correctly -->
+
+  <world name="default">
+    <!--include>
+      <uri>model://willowgarage</uri>
+    </include-->
+
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- Global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+
+  <model name="cmwa">
+      <link
+    name="communication_module_with_antenna">
+    <inertial>
+      <origin
+        xyz="15 1.8397E-17 4.7957E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.35324" />
+      <inertia
+        ixx="0.012159"
+        ixy="-9.6779E-05"
+        ixz="2.76111910841712E-20"
+        iyy="0.012161"
+        iyz="-7.0539699945927E-19"
+        izz="0.00039152" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707963267949 0 0" />
+      <geometry>
+        <mesh>
+          <uri>/home/amit/mybot_ws/src/mybot_gazebo/worlds/communication_module_with_antenna.STL</uri>
+          <scale>0.01 0.01 0.01</scale>
+        </mesh>
+        <!--mesh
+          filename="package://communication_module_with_antenna/meshes/communication_module_with_antenna.STL" /-->
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+        <!--texture
+          filename="package://communication_module_with_antenna/textures/" /-->
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707963267949 0 0" />
+      <geometry>
+        <!--mesh
+          filename="package://communication_module_with_antenna/meshes/communication_module_with_antenna.STL" /-->
+        <mesh>
+          <uri>/home/amit/mybot_ws/src/mybot_gazebo/worlds/communication_module_with_antenna.STL</uri>
+          <scale>0.01 0.01 0.01</scale>
+        </mesh>
+      </geometry>
+    </collision>
+  </link>
+</model>
+   
+    <!-- Focus camera on tall pendulum -->
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>4.927360 -4.376610 3.740080 0.000000 0.275643 2.356190</pose>
+        <view_controller>orbit</view_controller>
+      </camera>
+    </gui>
+
+  </world>
+</sdf>
