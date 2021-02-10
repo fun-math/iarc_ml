@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="paused" value="True"/>
+    </include>
+
+        
+    <!-- Robot model -->
+    <param name="robot_description_sdf" textfile="$(find hunter_killer_mast)/urdf/model.sdf" />
+    
+    <!-- Spawn the robot model -->
+    <node name="mybot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
+            args="-sdf -param robot_description_sdf -x 0 -y 0.6 -z 0.051 -model droneship2" />
+          
+</launch>
