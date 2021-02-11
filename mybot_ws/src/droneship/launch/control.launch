@@ -8,11 +8,10 @@
         
         <!-- Robot model -->
         <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find hunter_killer_mast)/urdf/hunter_killer_mast.urdf'" />
-        <param name="robot_description_sdf" textfile="$(find hunter_killer_mast)/urdf/hunter_killer_mast.sdf" />
-        
+
         <!-- Spawn the robot model -->
         <node name="mybot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
-              args="-sdf -param robot_description_sdf -x 0 -y 0.6 -z 0.051 -model hunter_killer_mast" />
+              args="-urdf -param robot_description -x 0 -y 0 -z 0.05 -model hunter_killer_mast" />
       
         <!-- Load controllers -->
         <rosparam command="load" file="$(find hunter_killer_mast)/config/joints.yaml" />

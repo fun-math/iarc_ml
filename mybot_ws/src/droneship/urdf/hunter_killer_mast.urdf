@@ -245,60 +245,6 @@
       xyz="0 0 0" />
   </joint>
 
-  <link name="buax">
-    <inertial>
-      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-      <mass value="2.0"/>
-      <inertia ixx="0.2" ixy="0.0" ixz="0.0" iyy="0.2" iyz="0.0" izz="0.2"/>
-    </inertial>
-  </link>
-
-  <joint name="joint_name" type="fixed">
-    <origin xyz="0 0.03 0.03" rpy="0.0 -1.570796 0.0"/>
-    <parent link="rod_supporter"/>
-    <child link="buax"/>
-    <axis xyz="0.0 0.0 0.0"/>
-    <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
-  </joint>
-
-  <gazebo reference="buax">        
-   <sensor type="ray" name="proxy">
-      <pose>0 0 0 0 -1.570796 0</pose>
-      <update_rate>50</update_rate>
-      <ray>
-         <scan>
-            <horizontal>
-               <samples>1</samples>
-               <resolution>1.0</resolution>
-               <min_angle>-0.01</min_angle>
-               <max_angle>0.01</max_angle>
-            </horizontal>
-            <vertical>
-               <samples>1</samples>
-               <resolution>1</resolution>
-               <min_angle>-0.01</min_angle>
-               <max_angle>0.01</max_angle>
-            </vertical>
-         </scan>
-         <range>
-            <min>0.01</min>
-            <max>3.75</max>
-            <resolution>0.02</resolution>
-         </range>
-      </ray>
-      <plugin filename="libgazebo_ros_range.so" name="gazebo_ros_range">
-         <gaussianNoise>0.005</gaussianNoise>
-         <alwaysOn>true</alwaysOn>
-         <updateRate>5</updateRate>
-         <topicName>/hunter_killer_mast/proxy_sensor</topicName>
-         <frameName>buax</frameName>
-         <visualize>true</visualize>
-         <radiation>infrared</radiation>
-         <fov>0.02</fov>
-      </plugin>
-    </sensor>            
-  </gazebo>
-
   <link
     name="rod_supporter">
     <inertial>
@@ -352,11 +298,6 @@
       link="rod_supporter" />
     <axis
       xyz="0 0 0" />
-    <limit
-      lower="0"
-      upper="0"
-      effort="0"
-      velocity="0" />
   </joint>
 
   <link
@@ -457,7 +398,7 @@
 
   <joint
     name="communication_module_joint"
-    type="prismatic">
+    type="fixed">
     <origin
       xyz="0.0127 0 0.05254"
       rpy="3.1416 -1.5708 1.6238" />
@@ -466,12 +407,7 @@
     <child
       link="communication_module" />
     <axis
-      xyz="1 0 0" />
-    <limit
-      lower="0"
-      upper="1"
-      effort="10"
-      velocity="1" />
+      xyz="0 0 0" />
   </joint>
 
   <link
@@ -528,7 +464,6 @@
     <axis
       xyz="0 0 0" />
   </joint>
-
   <link
     name="exposed_plate">
     <inertial>
@@ -699,6 +634,8 @@
   </joint>
 
   #LED 
+
+<!--
 
   <joint name="ledport_joint" type="fixed">
     <origin xyz="-0.05 0.004 0.48" rpy="0.0 -1.570796 0.0"/>
@@ -1021,6 +958,8 @@
       xyz="0 0 0" />
   </joint>
 
+-->
+
   #ROS Control and Transmissions
 
   <transmission name="roll_trans" type="SimpleTransmission">
@@ -1053,6 +992,8 @@
     </joint>
   </transmission>
 
+<!--
+
   <transmission name="left_led" type="SimpleTransmission">
     <type>transmission_interface/SimpleTransmission</type>
     <actuator name="left_led">
@@ -1073,6 +1014,8 @@
     </joint>
   </transmission>
 
+-->
+
   <gazebo>
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
       <robotNamespace>/hunter_killer_mast</robotNamespace>
@@ -1080,6 +1023,8 @@
   </gazebo>
 
   # Colors for reference
+
+<!--
 
   <gazebo reference="hemi1l">
     <material>Gazebo/Green</material>
@@ -1089,5 +1034,6 @@
     <material>Gazebo/Red</material>
   </gazebo>
 
+-->
 
 </robot>

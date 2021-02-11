@@ -1,5 +1,5 @@
 # Publish all joint states -----------------------------------
-joint_state_controller:
+joint_state_controller_mast:
   type: joint_state_controller/JointStateController
   publish_rate: 50
 
@@ -18,11 +18,11 @@ pankha_controller:
   joint: pankha_joint
   pid: {p: 500, i: 25, d: 25}
 
-led_port_controller:
-  type: velocity_controllers/JointVelocityController
-  joint: hemi1l_joint
-  pid: {p: 500, i: 25, d: 25}
-led_starboard_controller:
-  type: velocity_controllers/JointVelocityController
-  joint: hemi1r_joint
-  pid: {p: 500, i: 25, d: 25}
+#led_port_controller:
+#  type: velocity_controllers/JointVelocityController
+#  joint: hemi1l_joint
+#  pid: {p: 500, i: 25, d: 25}
+#led_starboard_controller:
+#  type: velocity_controllers/JointVelocityController
+#  joint: hemi1r_joint
+#  pid: {p: 500, i: 25, d: 25}
