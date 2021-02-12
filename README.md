@@ -25,6 +25,7 @@ Download the weights from these drive links and keep it in the *backup* folder.
 - [module_new](https://drive.google.com/file/d/1Mbv-Mt756YZ_OKRp_Sf20Q3lilPeooei/view?usp=sharing)
 - [tiny_module](https://drive.google.com/file/d/1VfXnKt03awvFPVqv9OVbZf6G2q3r_pEB/view?usp=sharing)
 - [tiny_board](https://drive.google.com/file/d/1-SEM0MKr6sb2d08MtECCvZcRvIefOnwU/view?usp=sharing)
+- [board_new](https://drive.google.com/file/d/1HY_DO5O2sncKn_8_VM4ZV0axOO7l2QTi/view?usp=sharing)
 
 ## Usage 
 
