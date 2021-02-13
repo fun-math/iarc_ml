@@ -19,11 +19,13 @@ def find_nav_lights(cv_img):
 	img_gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 
 	b,g,r=np.rollaxis(img,2,0)
+	h,s,v=np.rollaxis(img_hsv,2,0)
 
-	mask_gray=((r-g)^2+(g-b)^2+(b-r)^2)>100
-	mask_green = (img_hsv[:,:,0]<70)*(50<img_hsv[:,:,0])*mask_gray 
+	mask_gray=((r-g)^2+(g-b)^2+(b-r)^2)>200
+	mask_gray=mask_gray*(200<s)
+	mask_green = (h<65)*(55<h)*mask_gray 
 	#print(mask.shape)
-	mask_red = (img_hsv[:,:,0]<10)+(170<img_hsv[:,:,0])
+	mask_red = (h<5)+(175<h)
 	mask_red=mask_red*mask_gray
 
 	res_green=img_gray*mask_green
@@ -49,10 +51,10 @@ def find_nav_lights(cv_img):
 			
 		if np.sum(img_gray*mask)/np.sum(mask)>40 :
 			red_state='On'
-			# img=cv2.drawContours(img,[cnt],0,(0,255,0),3)
+			img=cv2.drawContours(img,[cnt],0,(0,255,0),3)
 		else :
 			red_state='Off'
-			# img=cv2.drawContours(img,[cnt],0,(255,255,255),3)
+			img=cv2.drawContours(img,[cnt],0,(255,255,255),3)
 
 
 	_,thresh = cv2.threshold(res_green,0,255,cv2.THRESH_BINARY)
@@ -69,28 +71,32 @@ def find_nav_lights(cv_img):
 		M=cv2.moments(cnt)
 		green_centre=(M['m10']/M['m00'],M['m01']/M['m00'])
 			
-		if np.sum(img_gray*mask)/np.sum(mask)>70 :
+		if np.sum(img_gray*mask)/np.sum(mask)>40 :
 			green_state="On"	
-			# img=cv2.drawContours(img,[cnt],0,(0,0,255),3)
+			img=cv2.drawContours(img,[cnt],0,(0,0,255),3)
 		else :
 			green_state="Off"
-			# img=cv2.drawContours(img,[cnt],0,(128,128,0),3)
+			img=cv2.drawContours(img,[cnt],0,(128,128,0),3)
 
-
+	# print(cv_img[rc[1]][rc[0]],cv_img[gc[1]][gc[0]])
+	cv2.imshow('img_new',img)
+	cv2.waitKey(50)
 	return [red_state,np.rint(np.array(red_centre)).astype(np.int32),green_state,np.rint(np.array(green_centre)).astype(np.int32)]
 	#res_green=cv2.GaussianBlur(res_green,(5,5),0)
 	#res=cv2.inRange(img_hsv,(30,0,0),(90,255,255))
-	# cv2.imshow('img_new',img)
+	
 	# cv2.imshow('img',cv_img)
 	#cv2.imshow('res_green',res_green)
 	#cv2.imshow('res_red',res_red)
-	# cv2.waitKey(10)	
+		
 
 def callback_opencv(data):
 	bridge = CvBridge()
 	cv_img = bridge.imgmsg_to_cv2(data, "bgr8")
+	
 	rs,rc,gs,gc=find_nav_lights(cv_img)
-	print(rs,rc,gs,gc)
+	print(cv_img[rc[1]][rc[0]],cv_img[gc[1]][gc[0]])
+	# print(rs,rc,gs,gc)
 
 def main():
 	global velocity_pub
@@ -98,7 +104,7 @@ def main():
 	rospy.init_node('main')
 	velocity_pub = rospy.Publisher('/cmd_vel', Twist, queue_size=10)
 	#sub_laser_front = rospy.Subscriber('/hexbot/laser/scan', LaserScan , callback_frontlaser)
-	image_sub = rospy.Subscriber("/mybot/camera1/image_raw",Image,callback_opencv)
+	image_sub = rospy.Subscriber("/camera/color/image_raw",Image,callback_opencv)
 	#image_sub2 = rospy.Subscriber("/hexbot/camera1/image_raw",Image, pickup)
 	#image_sub3 = rospy.Subscriber("/hexbot/camera1/image_raw",Image, see_tag_and_put)
 	rospy.spin()
