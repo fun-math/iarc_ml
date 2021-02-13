@@ -15,6 +15,8 @@ Note : There was a bug in *darknet2pytorch.py*. So clone again to run tiny model
 *centre* is tuple of integers (x,y)
 - Trained board with yolov4 tiny too and this runs at 60fps in colab but **didn't give good accuracy** \
 Update the cfg file to *yolov4-tiny_box.cfg* and the weights file too to run the tiny model.\
+- Trained board with new model (not tested yet)\
+The same config file works but change the weights to *board_new* 
 
 ## Weights
 
@@ -25,7 +27,7 @@ Download the weights from these drive links and keep it in the *backup* folder.
 - [module_new](https://drive.google.com/file/d/1Mbv-Mt756YZ_OKRp_Sf20Q3lilPeooei/view?usp=sharing)
 - [tiny_module](https://drive.google.com/file/d/1VfXnKt03awvFPVqv9OVbZf6G2q3r_pEB/view?usp=sharing)
 - [tiny_board](https://drive.google.com/file/d/1-SEM0MKr6sb2d08MtECCvZcRvIefOnwU/view?usp=sharing)
-- [board_new](https://drive.google.com/file/d/1HY_DO5O2sncKn_8_VM4ZV0axOO7l2QTi/view?usp=sharing)
+- [board_new](https://drive.google.com/file/d/17jcKUu4u31MrMppSytGsX5uE-gKAEwEL/view?usp=sharing)
 
 ## Usage 
 
