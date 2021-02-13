@@ -38,8 +38,8 @@ def find_nav_lights(cv_img):
 	red_state='Not Found'
 	red_centre=(0,0)
 	for  cnt in contours :
-		if cv2.contourArea(cnt)<200:
-			continue
+		# if cv2.contourArea(cnt)<200:
+			# continue
 		mask=np.zeros_like(res_red)
 		mask=cv2.drawContours(mask,[cnt],0,255,-1)
 		mask=mask/255.0
@@ -61,8 +61,8 @@ def find_nav_lights(cv_img):
 	green_state='Not Found'
 	green_centre=(0,0)
 	for  cnt in contours :
-		if cv2.contourArea(cnt)<200:
-			continue
+		# if cv2.contourArea(cnt)<200:
+			# continue
 		mask=np.zeros_like(res_red)
 		mask=cv2.drawContours(mask,[cnt],0,255,-1)
 		mask=mask/255.0
@@ -77,7 +77,7 @@ def find_nav_lights(cv_img):
 			# img=cv2.drawContours(img,[cnt],0,(128,128,0),3)
 
 
-	return [red_state,red_centre,green_state,green_centre]
+	return [red_state,np.rint(np.array(red_centre)).astype(np.int32),green_state,np.rint(np.array(green_centre)).astype(np.int32)]
 	#res_green=cv2.GaussianBlur(res_green,(5,5),0)
 	#res=cv2.inRange(img_hsv,(30,0,0),(90,255,255))
 	# cv2.imshow('img_new',img)
