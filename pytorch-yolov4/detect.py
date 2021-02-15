@@ -28,7 +28,7 @@ def my_detect(m,cv_img):
   use_cuda=True
   img=cv2.resize(cv_img, (m.width, m.height))
   img=cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-  boxes = do_detect(m, img, 0.4, 0.6, use_cuda)
+  boxes = do_detect(m, img, 0.2, 0.6, use_cuda)
   if len(boxes[0])==0:
     return [False,0,0,0,0]
   box=boxes[0][0]
@@ -43,7 +43,7 @@ def end_to_end(board,module,cv_img):
   use_cuda=True
   img=cv2.resize(cv_img, (board.width, board.height))
   img=cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-  boxes = do_detect(board, img, 0.4, 0.6, use_cuda)
+  boxes = do_detect(board, img, 0.2, 0.6, use_cuda)
   if len(boxes[0])==0:
     return [False,0,0,0,0]
   box=boxes[0][0]
@@ -65,7 +65,7 @@ def end_to_end(board,module,cv_img):
   cropped=cv2.resize(cv_img[y1:y2,x1:x2], (module.width,module.height))
   # imShow(cropped)
   cropped=cv2.cvtColor(cropped, cv2.COLOR_BGR2RGB)
-  boxes=do_detect(module, cropped, 0.4, 0.6, use_cuda)
+  boxes=do_detect(module, cropped, 0.2, 0.6, use_cuda)
   if len(boxes[0])==0:
     return [False,0,0,0,0]
   box=boxes[0][0]
