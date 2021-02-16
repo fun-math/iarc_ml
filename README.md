@@ -27,13 +27,19 @@ Download the weights from these drive links and keep it in the *backup* folder.
 
 - [board](https://drive.google.com/file/d/1W63HaBdtmTq_cT1u0SDh5tvrRmQTD4zI/view?usp=sharing)
 - [module](https://drive.google.com/file/d/1-aGdPU61z8n1VrkYkSnyJPlVrKuZUq4A/view?usp=sharing)
-- [module_new](https://drive.google.com/file/d/1Mbv-Mt756YZ_OKRp_Sf20Q3lilPeooei/view?usp=sharing)\*
+- [module_new](https://drive.google.com/file/d/1Mbv-Mt756YZ_OKRp_Sf20Q3lilPeooei/view?usp=sharing)\
 - [tiny_module](https://drive.google.com/file/d/1VfXnKt03awvFPVqv9OVbZf6G2q3r_pEB/view?usp=sharing)
 - [tiny_board](https://drive.google.com/file/d/1-SEM0MKr6sb2d08MtECCvZcRvIefOnwU/view?usp=sharing)
 - [board_new](https://drive.google.com/file/d/17jcKUu4u31MrMppSytGsX5uE-gKAEwEL/view?usp=sharing)
-- [board_both](https://drive.google.com/file/d/1-5dOSINKSGN2sZnJMQD-285nPFEHiEj-/view?usp=sharing)\*
+- [board_both](https://drive.google.com/file/d/1-5dOSINKSGN2sZnJMQD-285nPFEHiEj-/view?usp=sharing)\
 \
-\* - our best pick
+Finally, here are the best weights that we propose. For each task, there is a yolov4 model and a yolov4-tiny. Yolov4 models would run at \~30fps. The tiny models would be slightly inaccurate but would be 3 times fast. Let's test both and pick the one that suits our needs :D \
+Further much of the unnecessary confusion with cfg files is now reduced. If you need to use any yolov4 model then keep *yolov4.cfg* as config file and if you want to use any tiny model then keep *yolov4-tiny.cfg* as config file.\
+
+- [board](https://drive.google.com/file/d/1-5dOSINKSGN2sZnJMQD-285nPFEHiEj-/view?usp=sharing)
+- [module](https://drive.google.com/file/d/1-2MB7MFfRD5oe43yE6jEGEjhKyF6SpcD/view?usp=sharing)
+- [tiny_board](https://drive.google.com/file/d/1-ekzkABBt4WBWUQxPTWqa-a5P8MjO4Vn/view?usp=sharing)
+- [tiny_module](https://drive.google.com/file/d/11NEg8h_StiHcexYYNIBUrZIeWjNuXe-L/view?usp=sharing)
 
 
 ## Usage 
